@@ -1,20 +1,45 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, SafeAreaView} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-const sliderResponse = require('../../sliderResponse/slider.json');
 import SliderItem from '../../components/sliderItem';
 import styles from './styles';
-const Home = ({params}) => (
-  <SafeAreaView style={styles.safeAreaView}>
-    <View style={styles.container}>
-      <Carousel
-        data={sliderResponse}
-        renderItem={SliderItem}
-        sliderWidth={300}
-        itemWidth={300}
-      />
-    </View>
-  </SafeAreaView>
-);
+import {connect} from 'react-redux';
+import {fetchHomeData} from './actions';
 
-export default Home;
+const Home = (props) => {
+  useEffect(() => {
+    console.log('props:', props);
+    props.fetchHomeData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return (
+    <SafeAreaView style={styles.safeAreaView}>
+      <View style={styles.container}>
+        <Carousel
+          data={props.photos}
+          renderItem={SliderItem}
+          sliderWidth={300}
+          itemWidth={300}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
+
+/**
+ * State to Props
+ * @param {*} param
+ */
+const mapStateToProps = (state) => {
+  return {
+    ...state.HomeReducer,
+  };
+};
+
+/**
+ * Dispatch to Props
+ */
+const mapDispatchToProps = {
+  fetchHomeData,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
