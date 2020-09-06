@@ -6,5 +6,5 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  safeAreaView: {flex: 1, backgroundColor: colors.rebeccaPurple},
+  safeAreaView: {flex: 1, backgroundColor: colors.steelBlue},
 });

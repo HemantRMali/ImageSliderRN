@@ -5,6 +5,7 @@ import {imageBaseUrl} from '../../constants';
 const SliderItem = ({item}) => {
   return (
     <ImageBackground
+      imageStyle={styles.imageStyle}
       source={{uri: `${imageBaseUrl}${item.id}`}}
       style={styles.imgBackground}>
       <Text style={styles.author}>{item.author}</Text>

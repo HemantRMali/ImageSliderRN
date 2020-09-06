@@ -5,6 +5,7 @@ import SliderItem from '../../components/sliderItem';
 import styles from './styles';
 import {connect} from 'react-redux';
 import {fetchHomeData} from './actions';
+import {shuffle} from '../../methods';
 
 const Home = (props) => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const Home = (props) => {
     <SafeAreaView style={styles.safeAreaView}>
       <View style={styles.container}>
         <Carousel
-          data={props.photos}
+          data={shuffle(props.photos)}
           renderItem={SliderItem}
           sliderWidth={300}
           itemWidth={300}

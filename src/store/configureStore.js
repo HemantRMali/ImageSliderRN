@@ -12,7 +12,6 @@ import appReducer from '../reducers';
 
 // Imports: Redux Root Saga
 import {rootSaga} from '../sagas';
-//import PDPReducer from '../pages/ProductDetailPage/reducer';
 
 // Middleware: Redux Saga
 const sagaMiddleware = createSagaMiddleware();
