@@ -194,7 +194,6 @@
 				C2161FB02E64D03B69CDAA5A /* Pods-ImageSliderRN-tvOSTests.debug.xcconfig */,
 				CDEFE3717A16F60D5C240B31 /* Pods-ImageSliderRN-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
